@@ -9,7 +9,7 @@ my_event1 = pygame.USEREVENT + 1
 pygame.time.set_timer(my_event1, 20)
 
 speed_event = pygame.USEREVENT + 2
-pygame.time.set_timer(speed_event, 1500)
+pygame.time.set_timer(speed_event, 200)
 
 
 def contr():
@@ -24,6 +24,7 @@ def contr():
             model.coin()
         if f.type == speed_event:
             model.speed_up()
+
         if f.type == pygame.MOUSEBUTTONDOWN and model.click(f.pos):
             pygame.time.set_timer(my_event, 2000)
         if f.type == pygame.KEYDOWN:
