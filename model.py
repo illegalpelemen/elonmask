@@ -2,9 +2,15 @@ import pygame, random
 
 
 def kurs():
-    global pixel_x, list_dot
-    list_dot.append([pixel_x, pixel_y])
-    pixel_x += 30
+    global pixel_y, list_dot,which_dot
+
+    if len(list_dot) == 4:
+        del list_dot[0]
+
+    list_dot.append(pixel_y)
+    pixel_y = random.randint(50, 450)
+
+
 
 
 def mod():
@@ -31,7 +37,7 @@ def elon():
 
 def game_over():
     global total_coins, mode
-    if total_coins < 0:
+    if total_coins < -1000000:
         mode = "game_over"
 
 
@@ -104,5 +110,6 @@ pixel_y = 250
 list_dot = []
 y = - 10
 x = 2
-for b in range(30):
+
+for b in range(5):
     kurs()

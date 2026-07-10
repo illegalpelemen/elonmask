@@ -30,3 +30,6 @@ def contr():
         if f.type == pygame.KEYDOWN:
             if f.key == pygame.K_RETURN:
                 model.start_game()
+            if f.key == pygame.K_SPACE:
+                model.kurs()
+

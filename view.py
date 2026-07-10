@@ -11,7 +11,6 @@ defeat_drawing = pygame.image.load("sprites/img.png")
 coin = pygame.transform.scale(coin_drawing,[50,50])
 elon = pygame.transform.scale(elon_drawing,model.rect_elon.size)
 fon = pygame.transform.scale(fon_drawing,[1000,500])
-
 defeat = pygame.transform.scale(defeat_drawing,[100,250])
 comsans = pygame.font.SysFont("comicsansms",30)
 text_intro = comsans.render("Нажмите enter чтобы начать игру",True,[255,255,255])
@@ -29,9 +28,9 @@ def vew():
         text = comsans.render(f"монет:{model.total_coins}",True, [255,255,255])
         screen.blit(coin,model.rect_coin)
         screen.blit(elon,model.rect_elon)
-        for a  in model.list_dot:
+        for a in range(len(model.list_dot)):
 
-            pygame.draw.circle(screen,[150,255,150],a,2)
+            pygame.draw.circle(screen,[150,255,150],[1000/(len(model.list_dot) - 1) * a ,model.list_dot[a]],2)
 
         screen.blit(text,[20,20])
     if model.mode == "game_over":
