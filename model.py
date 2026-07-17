@@ -2,13 +2,13 @@ import pygame, random
 
 
 def kurs():
-    global pixel_y, list_dot,which_dot
+    global list_dot
 
-    if len(list_dot) == 4:
+    if len(list_dot) == 200:
         del list_dot[0]
 
+    pixel_y = random.choice([list_dot[len(list_dot)-1]-15, list_dot[len(list_dot)-1]+15])
     list_dot.append(pixel_y)
-    pixel_y = random.randint(50, 450)
 
 
 
@@ -105,11 +105,9 @@ rect_coin = pygame.Rect(500, 50, 50, 50)
 rect_elon = pygame.Rect(100, 200, 256, 144)
 total_coins = 0
 local_record = 0
-pixel_x = 0
-pixel_y = 250
-list_dot = []
+list_dot = [250]
 y = - 10
 x = 2
 
-for b in range(5):
+for b in range(200):
     kurs()

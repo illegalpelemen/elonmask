@@ -24,12 +24,13 @@ def contr():
             model.coin()
         if f.type == speed_event:
             model.speed_up()
+            model.kurs()
 
         if f.type == pygame.MOUSEBUTTONDOWN and model.click(f.pos):
             pygame.time.set_timer(my_event, 2000)
         if f.type == pygame.KEYDOWN:
             if f.key == pygame.K_RETURN:
                 model.start_game()
-            if f.key == pygame.K_SPACE:
-                model.kurs()
+
+
 

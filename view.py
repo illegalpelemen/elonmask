@@ -28,10 +28,10 @@ def vew():
         text = comsans.render(f"монет:{model.total_coins}",True, [255,255,255])
         screen.blit(coin,model.rect_coin)
         screen.blit(elon,model.rect_elon)
-        for a in range(len(model.list_dot)):
+        for a in range(len(model.list_dot)-1):
 
             pygame.draw.circle(screen,[150,255,150],[1000/(len(model.list_dot) - 1) * a ,model.list_dot[a]],2)
-
+            pygame.draw.line(screen,[55,255,55],[1000/(len(model.list_dot) -1) * a ,model.list_dot[a]],[1000/(len(model.list_dot)-1) * (a+1),model.list_dot[a+1]],3)
         screen.blit(text,[20,20])
     if model.mode == "game_over":
         screen.blit(defeat,[100,250])
